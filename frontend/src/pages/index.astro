@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { InfoSection } from "../components/InfoSection";
+import { LandingHero } from "../components/LandingHero";
+import { LanguageToggle } from "../components/LanguageToggle";
+import { ConfigDashboard } from "../components/UI/ConfigDashboard";
+import { SimulationShell } from "../components/Simulation/SimulationShell";
+---
+
+<BaseLayout>
+  <main class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-1 sm:py-2">
+    <LanguageToggle client:load />
+
+    <LandingHero client:load />
+
+    <ConfigDashboard client:load />
+
+    <div id="simulation-section">
+      <SimulationShell client:only="react" />
+    </div>
+
+    <InfoSection client:load />
+  </main>
+</BaseLayout>

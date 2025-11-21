@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "shell": {
+      "executable": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-Command"
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "label": "Setup: deps (pnpm)",
+      "type": "shell",
+      "command": "pnpm install",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: lint (eslint)",
+      "type": "shell",
+      "command": "pnpm --dir frontend lint",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: type-check / astro check",
+      "type": "shell",
+      "command": "pnpm --dir frontend type-check",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: tests (vitest)",
+      "type": "shell",
+      "command": "pnpm --dir frontend test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: build (SSG)",
+      "type": "shell",
+      "command": "pnpm --dir frontend build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: preview (dist)",
+      "type": "shell",
+      "command": "pnpm --dir frontend preview",
+      "problemMatcher": []
+    },
+    {
+      "label": "Audit deps (pnpm --prod)",
+      "type": "shell",
+      "command": "pnpm audit --prod",
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify (all gates)",
+      "dependsOn": [
+        "Frontend: lint (eslint)",
+        "Frontend: type-check / astro check",
+        "Frontend: tests (vitest)",
+        "Frontend: build (SSG)",
+        "Audit deps (pnpm --prod)"
+      ],
+      "dependsOrder": "sequence"
+    }
+  ]
+}

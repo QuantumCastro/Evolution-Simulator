@@ -1,0 +1,17 @@
+{
+  "name": "@app/root",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Workspace root for the Astro + React web-static.",
+  "scripts": {
+    "lint": "pnpm --dir frontend lint",
+    "type-check": "pnpm --dir frontend type-check",
+    "test": "pnpm --dir frontend test",
+    "build": "pnpm --dir frontend build",
+    "audit": "pnpm audit --prod"
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=9.0.0"
+  }
+}
