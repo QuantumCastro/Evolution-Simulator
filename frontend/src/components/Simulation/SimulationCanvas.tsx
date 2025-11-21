@@ -22,6 +22,7 @@ const initializeCanvasPixels = (host: HTMLElement | null) => {
   if (!canvas) return;
   canvas.style.width = "100%";
   canvas.style.height = "100%";
+  canvas.style.objectFit = "cover";
   canvas.style.borderRadius = "18px";
   canvas.style.boxShadow = "0 0 40px rgba(16, 185, 129, 0.2)";
 };
@@ -88,7 +89,7 @@ const SimulationCanvas = () => {
   }, [config]);
 
   return (
-    <div className="relative min-h-[540px] w-full overflow-hidden rounded-3xl border border-white/10 bg-black/70">
+    <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-black/70 aspect-[9/16] min-h-[520px] sm:aspect-video sm:min-h-[520px] sm:max-h-[520px] md:max-h-[470px] lg:max-h-[440px]">
       <div className="absolute left-0 top-0 z-10 flex flex-wrap gap-3 p-4 text-xs">
         <span className="rounded-full bg-cyan-500/20 px-3 py-1 font-semibold text-cyan-100">
           {t.simulationCanvas.metrics.alive}: {metrics.alive}
@@ -103,7 +104,7 @@ const SimulationCanvas = () => {
           {t.simulationCanvas.metrics.island}
         </span>
       </div>
-      <div className="relative h-[540px] w-full" ref={containerRef} />
+      <div className="relative h-full w-full" ref={containerRef} />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/50 to-transparent p-4 text-[11px] text-slate-200">
         {t.simulationCanvas.interactions.left} {t.simulationCanvas.interactions.right}
       </div>
