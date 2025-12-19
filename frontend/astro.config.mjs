@@ -8,6 +8,10 @@ const enableImageOptimizer = process.env.ENABLE_IMAGE_OPTIMIZER === "true";
 export default defineConfig({
   output: "static",
   srcDir: "src",
+  server: {
+    host: true,
+    port: 4321,
+  },
   integrations: [
     react(),
     tailwind({

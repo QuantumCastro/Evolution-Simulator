@@ -22,10 +22,10 @@ export const InfoSection = () => {
   ] as const;
 
   return (
-    <section className="grid gap-6 rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-lg sm:grid-cols-2">
+    <section className="grid gap-6 rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur-lg sm:grid-cols-2 lg:gap-8 lg:p-8">
       <div>
-        <h3 className="text-lg font-semibold text-white">{t.info.speciesTitle}</h3>
-        <ul className="mt-3 space-y-2 text-sm text-slate-200">
+        <h3 className="break-words text-lg font-semibold text-white">{t.info.speciesTitle}</h3>
+        <ul className="mt-3 space-y-2 text-sm text-slate-200 lg:space-y-3 lg:leading-relaxed">
           {species.map((item) => (
             <li key={item.key}>
               <strong className={speciesColors[item.key]}>{item.copy.split(":")[0]}:</strong>{" "}
@@ -34,9 +34,9 @@ export const InfoSection = () => {
           ))}
         </ul>
       </div>
-      <div className="sm:pl-4">
-        <h3 className="text-lg font-semibold text-white">{t.info.engineTitle}</h3>
-        <ul className="mt-3 space-y-2 text-sm text-slate-200">
+      <div className="sm:pl-4 lg:pl-6">
+        <h3 className="break-words text-lg font-semibold text-white">{t.info.engineTitle}</h3>
+        <ul className="mt-3 space-y-2 text-sm text-slate-200 lg:space-y-3 lg:leading-relaxed">
           {t.info.enginePoints.map((point) => (
             <li key={point}>{point}</li>
           ))}

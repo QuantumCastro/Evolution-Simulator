@@ -105,7 +105,7 @@ const SimulationCanvas = () => {
         </span>
       </div>
       <div className="relative h-full w-full" ref={containerRef} />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/50 to-transparent p-4 text-[11px] text-slate-200">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/50 to-transparent p-4 text-[11px] text-slate-200 lg:leading-relaxed">
         {t.simulationCanvas.interactions.left} {t.simulationCanvas.interactions.right}
       </div>
     </div>

@@ -140,11 +140,11 @@ export const ConfigDashboard = () => {
   };
 
   return (
-    <section className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr] items-start">
-      <header className="space-y-3">
+    <section className="grid gap-6 items-start lg:grid-cols-[1.2fr,0.8fr] lg:gap-10">
+      <header className="space-y-3 lg:space-y-4">
         <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/80">{t.config.badge}</p>
-        <h1 className="text-3xl sm:text-4xl font-semibold text-white">{t.config.title}</h1>
-        <p className="text-slate-200 text-sm sm:text-base max-w-2xl">{t.config.body}</p>
+        <h1 className="break-words text-3xl font-semibold text-white sm:text-4xl">{t.config.title}</h1>
+        <p className="max-w-2xl text-sm text-slate-200 sm:text-base lg:leading-relaxed">{t.config.body}</p>
         <div className="flex flex-wrap gap-3">
           <button
             type="button"
@@ -161,7 +161,7 @@ export const ConfigDashboard = () => {
             {paneCollapsed ? t.config.show : t.config.minimize}
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-4 text-xs text-slate-200/80">
+        <div className="grid gap-4 text-xs text-slate-200/80 sm:grid-cols-2 lg:gap-5">
           <div className="rounded-lg border border-white/5 bg-white/5 p-3">
             <p className="font-semibold text-emerald-200">{t.config.metrics.poolTitle}</p>
             <p>{t.config.metrics.poolBody.replace("{count}", String(config.poolSize))}</p>
@@ -174,7 +174,7 @@ export const ConfigDashboard = () => {
       </header>
 
       <aside
-        className={`rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-4 backdrop-blur ${
+        className={`rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-4 backdrop-blur lg:p-6 ${
           paneCollapsed ? "opacity-60" : ""
         }`}
       >
@@ -185,7 +185,7 @@ export const ConfigDashboard = () => {
           </span>
         </div>
         <div
-          className="overflow-hidden transition-[max-height] duration-1000 ease-in-out"
+          className="max-w-full overflow-x-auto overflow-y-hidden transition-[max-height] duration-1000 ease-in-out"
           style={{ maxHeight: paneCollapsed ? "0px" : "520px" }}
         >
           <div
@@ -197,7 +197,7 @@ export const ConfigDashboard = () => {
             }`}
           />
         </div>
-        <div className="pt-1.5 text-[11px] text-emerald-100/80">
+        <div className="pt-1.5 text-[11px] text-emerald-100/80 lg:leading-relaxed">
           {t.config.hint}
         </div>
       </aside>

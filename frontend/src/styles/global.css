@@ -9,6 +9,12 @@
   color: #e2e8f0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.08), transparent 25%),
@@ -20,6 +26,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
 }
 
 .glass-panel {
